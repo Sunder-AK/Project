@@ -1,0 +1,20 @@
+{
+  "name": "request-tracking-system",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n BACKEND,FRONTEND -c green,cyan \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend -- --port 5173",
+    "migrate": "npm run migrate -w backend",
+    "seed": "npm run seed -w backend"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "node-forge": "^1.3.3",
+    "selfsigned": "^5.5.0"
+  }
+}
